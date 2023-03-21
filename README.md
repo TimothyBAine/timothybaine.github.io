@@ -5,11 +5,12 @@ Welcome to my data science portfolio! This portfolio showcases some of the proje
 ## Overview of Projects
 This portfolio contains the following data science projects:
 
-Project 1: Predicting House Prices using Regression Analysis
-Project 2: Sentiment Analysis of Twitter Data using Natural Language Processing
-Project 3: Customer Segmentation using Clustering Algorithms
-Project 4: Analyzing Sales Trends using Time Series Analysis
-Project 5: Fraud Detection using Machine Learning Algorithms
+* Project 1: Predicting House Prices using Regression Analysis
+* Project 2: Sentiment Analysis of Twitter Data using Natural Language Processing
+* Project 3: Customer Segmentation using Clustering Algorithms
+* Project 4: Analyzing Sales Trends using Time Series Analysis
+* Project 5: Fraud Detection using Machine Learning Algorithms
+
 Each project includes a detailed explanation of the problem, the methods used, and the results achieved.
 
 ## Tools and Techniques
