@@ -1,175 +1,412 @@
-<!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Timothy Aine Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timothy Aine</title>
+<meta name="description" content="Timothy Aine: data and investment professional in Kampala, Uganda. Market regimes, quantitative research and investment tooling.">
+<meta property="og:title" content="Timothy Aine">
+<meta property="og:description" content="Data and investment professional in Kampala, Uganda. Market regimes, quantitative research and investment tooling.">
+<meta property="og:image" content="https://timothybaine.github.io/images/profile.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0C1424; --panel:#121C31; --panel-2:#17233C; --line:#22314F;
+  --text:#E7ECF3; --muted:#93A0B6; --faint:#5F6E88;
+  --calm:#3FB68B; --stress:#E8A33D; --price:#D3DEEE;
+  --calm-band:rgba(63,182,139,.13); --stress-band:rgba(232,163,61,.26);
+  --focus:#7FB4FF;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --bg:#F3F5F8; --panel:#FFFFFF; --panel-2:#EAEFF5; --line:#D5DDE8;
+    --text:#0F1A2E; --muted:#4E5B72; --faint:#7A879C;
+    --calm:#1E8A65; --stress:#B9740F; --price:#24324D;
+    --calm-band:rgba(30,138,101,.12); --stress-band:rgba(185,116,15,.22);
+    --focus:#1F5FD1; color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#F3F5F8; --panel:#FFFFFF; --panel-2:#EAEFF5; --line:#D5DDE8;
+  --text:#0F1A2E; --muted:#4E5B72; --faint:#7A879C;
+  --calm:#1E8A65; --stress:#B9740F; --price:#24324D;
+  --calm-band:rgba(30,138,101,.12); --stress-band:rgba(185,116,15,.22);
+  --focus:#1F5FD1; color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.65 var(--body);font-feature-settings:"tnum" 1}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--calm)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:4px}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(30px,4.2vw,44px);font-weight:700;margin-bottom:12px}
+h3{font-size:23px;font-weight:700}
+p{margin:0 0 1em}
+.lede{color:var(--muted);max-width:62ch}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:10;background:var(--panel);padding:8px 12px}
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+/* Top bar */
+.top{position:absolute;inset:0 0 auto;z-index:3}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:72px}
+.mark{font-family:var(--display);font-weight:700;font-size:18px;text-decoration:none}
+.top nav{display:flex;gap:6px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;border:1px solid var(--line);text-decoration:none;font-weight:500;font-size:15px;background:transparent;color:var(--text);cursor:pointer;font-family:var(--body)}
+.btn:hover{border-color:var(--calm);color:var(--text)}
+.btn.primary{background:var(--calm);border-color:var(--calm);color:#06140F}
+.btn.primary:hover{filter:brightness(1.08);color:#06140F}
+.theme{width:40px;height:40px;padding:0;justify-content:center}
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Solid State</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:110px 0 70px}
+.hero svg.chart{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--bg) 6%,color-mix(in srgb,var(--bg) 62%,transparent) 48%,transparent 80%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.35fr .9fr;gap:56px;align-items:center;width:100%}
+.hero h1{font-size:clamp(56px,9.5vw,124px);font-weight:800;letter-spacing:-.045em;line-height:.92;margin-bottom:28px}
+.hero p.intro{font-size:clamp(18px,1.6vw,21px);max-width:34ch;color:var(--muted)}
+.hero p.intro strong{color:var(--text);font-weight:500}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 44px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);gap:12px 44px;justify-content:start;margin:0;padding:0;list-style:none}
+.facts b{display:block;font-family:var(--display);font-size:clamp(26px,3vw,36px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.facts span{color:var(--muted);font-size:14px}
+.portrait{position:relative;justify-self:end;width:min(100%,380px)}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;filter:grayscale(.15) contrast(1.02);border:1px solid var(--line)}
+.portrait figcaption{position:absolute;left:16px;bottom:16px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(6px);padding:6px 12px;border-radius:999px;font-size:13px;color:var(--muted)}
+.legend{position:absolute;right:24px;bottom:22px;z-index:2;display:flex;gap:16px;font-size:13px;color:var(--faint)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="elements.html">Projects</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+/* Sections */
+section.block{padding:110px 0;border-top:1px solid var(--line)}
+.split{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px}
+.about-body p{max-width:62ch}
+.now{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.now div{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+.now small{color:var(--calm);font-size:14px;font-weight:600}
+.now h3{font-size:20px;margin:6px 0 8px}
+.now p{color:var(--muted);font-size:15.5px;margin:0}
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<div class="logo"><span class="icon fa-gem"></span></div>
-							<h2>Timothy Aine</h2>
-							<p>Data Science Adventures: Unlocking Insights and Creating Value.</p>
-						</div>
-					</section>
+/* Research timeline */
+.roadmap{list-style:none;margin:40px 0 0;padding:0;border-left:2px solid var(--line)}
+.roadmap li{position:relative;padding:0 0 34px 34px;max-width:760px}
+.roadmap li::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--faint)}
+.roadmap li[data-s="pub"]::before{background:var(--calm);border-color:var(--calm)}
+.roadmap li[data-s="wip"]::before{background:var(--stress);border-color:var(--stress)}
+.status{font-size:14px;font-weight:600;color:var(--faint)}
+li[data-s="pub"] .status{color:var(--calm)} li[data-s="wip"] .status{color:var(--stress)}
+.roadmap h3{margin:2px 0 6px}
+.roadmap p{color:var(--muted);margin:0}
 
-				<!-- Wrapper -->
-					<section id="wrapper">
+/* Work */
+.work{display:grid;gap:18px;margin-top:40px}
+.case{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:34px}
+.case .kind{color:var(--muted);font-size:14px;margin-bottom:8px}
+.case h3{font-size:clamp(24px,2.6vw,30px);margin-bottom:12px}
+.case p{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 0;padding:0;list-style:none}
+.tags li{font-size:13px;padding:3px 10px;border-radius:999px;background:var(--panel-2);color:var(--muted)}
+.links{display:flex;gap:18px;margin-top:18px;font-weight:500;font-size:15px}
+.metrics{display:grid;gap:12px;align-content:start;margin:0}
+.metrics div{border-top:1px solid var(--line);padding-top:12px}
+.metrics dt{font-family:var(--display);font-size:30px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.metrics dd{margin:2px 0 0;color:var(--muted);font-size:14.5px}
 
-						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/profile.jpeg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Introduction</h2>
-										<p>Data Scientist with 4 years of experience in modelling, data analysis, and data visualization. 
-											Experienced in machine learning models, valuations, and analysis of data. Passionate about communicating results to decision-makers. Skilled in Python programming, data processing/wrangling, data visualization, machine learning, and deep learning. Seeking to leverage these skills in a Data Scientist role to contribute to the development of machine learning algorithms to provide insights and solve problems.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
+/* GitHub */
+.gh-stats{display:flex;flex-wrap:wrap;gap:12px 44px;margin:32px 0}
+.gh-stats b{display:block;font-family:var(--display);font-size:34px;font-weight:700}
+.gh-stats span{color:var(--muted);font-size:14px}
+.repos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.repo{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;text-decoration:none;min-height:150px}
+.repo:hover{border-color:var(--calm);color:var(--text)}
+.repo strong{font-family:var(--display);font-size:18px;font-weight:700;word-break:break-word}
+.repo p{color:var(--muted);font-size:15px;margin:6px 0 14px;flex:1}
+.repo small{color:var(--faint);font-size:13px}
+.gh-note{color:var(--faint);font-size:14px;margin-top:16px}
 
-						<!-- Two -->
-							<section id="two" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Tempus adipiscing</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
+/* Contact */
+.contact h2{font-size:clamp(40px,6.5vw,76px);font-weight:800;letter-spacing:-.04em;max-width:14ch}
+.contact .cta{margin-bottom:0}
+footer{padding:40px 0 120px;color:var(--faint);font-size:14px;border-top:1px solid var(--line)}
 
-						<!-- Three -->
-							<section id="three" class="wrapper spotlight style3">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Nullam dignissim</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
+/* Dock */
+.dock{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:5;display:flex;gap:2px;padding:6px;border-radius:999px;background:color-mix(in srgb,var(--panel) 88%,transparent);backdrop-filter:blur(10px);border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.dock a{padding:8px 14px;border-radius:999px;text-decoration:none;font-size:14px;font-weight:500;color:var(--muted)}
+.dock a:hover,.dock a.on{background:var(--panel-2);color:var(--text)}
 
-						<!-- Four -->
-							<section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Vitae phasellus</h2>
-									<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Nisl placerat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3 class="major">Ante fermentum</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3 class="major">Fusce consequat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section>
-									<ul class="actions">
-										<li><a href="#" class="button">Browse All</a></li>
-									</ul>
-								</div>
-							</section>
+/* Chart draw-in: the one orchestrated moment */
+.chart .price{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 2.6s cubic-bezier(.45,.05,.2,1) .2s forwards}
+.chart .band{opacity:0;animation:fade .8s ease forwards;animation-delay:calc(.2s + var(--t) * 2.6s)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .chart .price,.chart .band{animation:none;stroke-dashoffset:0;opacity:1}
+}
 
-					</section>
+@media (max-width:900px){
+  .hero .wrap,.split,.case{grid-template-columns:1fr}
+  .hero .wrap{gap:40px}
+  .portrait{justify-self:start;width:min(100%,300px)}
+  .now,.repos{grid-template-columns:1fr}
+  .split{gap:20px}
+  .legend{display:none}
+}
+@media (max-width:560px){
+  .hero svg.chart{opacity:.4}
+  .wrap{padding:0 16px}
+  .top nav .btn:not(.theme){display:none}
+  .facts{grid-template-columns:1fr 1fr}
+  .case{padding:24px}
+  section.block{padding:80px 0}
+  .dock a{padding:8px 10px;font-size:13px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="icon solid fa-envelope"><a href="mailto:timothy.b.aine@gmail.com?subject=Wish to get in touch" target="_blank">Email</a></li>
-								<li class="icon brands fa-whatsapp"><a href="https://wa.me/+256780230910" target="_blank">Whatsapp</a></li>
-								<li class="icon brands fa-github"><a href="https://GitHub.com/TimothyBAine" target="_blank">Github</a></li>
-								<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/timothybaine" target="_blank">LinkedIn</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Timothy Aine. All rights reserved.</li>
-							</ul>
-						</div>
-					</section>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top">Timothy Aine</a>
+    <nav aria-label="Quick links">
+      <a class="btn" href="https://analytical-investor.blog">Blog</a>
+      <a class="btn" href="https://github.com/TimothyBAine">GitHub</a>
+      <button class="btn theme" id="theme" type="button" aria-label="Switch colour theme">◐</button>
+    </nav>
+  </div>
+</header>
 
-			</div>
+<main>
+  <section class="hero" id="top" aria-labelledby="name">
+    <svg class="chart" id="chart" aria-hidden="true" preserveAspectRatio="none"></svg>
+    <div class="wrap">
+      <div>
+        <h1 id="name">Timothy<br>Aine</h1>
+        <p class="intro"><strong>Data &amp; investment professional in Kampala.</strong> I build tools where finance meets engineering, and I study how markets switch between calm and stressed regimes.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:timothy.b.aine@gmail.com">Email me</a>
+          <a class="btn" href="https://analytical-investor.blog">Read the blog</a>
+          <a class="btn" href="https://www.linkedin.com/in/timothybaine">LinkedIn</a>
+        </div>
+        <ul class="facts">
+          <li><b>VP</b><span>Investor Relations &amp; Data</span></li>
+          <li><b>MSc</b><span>Financial Engineering</span></li>
+          <li><b id="repo-count">20+</b><span>Public repositories</span></li>
+        </ul>
+      </div>
+      <figure class="portrait">
+        <img src="images/profile.jpeg" alt="Portrait of Timothy Aine" width="380" height="475">
+        <figcaption>Kampala, Uganda</figcaption>
+      </figure>
+    </div>
+    <div class="legend" aria-hidden="true"><span><i style="background:var(--calm)"></i>Calm regime</span><span><i style="background:var(--stress)"></i>Stressed regime</span><span>Simulated two-state path</span></div>
+  </section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+  <section class="block" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="split">
+        <h2 id="about-h">About</h2>
+        <div class="about-body">
+          <p>I lead investor relations and data at XENO Investment Management, where I turn raw client and fund data into the numbers people decide with.</p>
+          <p>Outside work I'm completing an MSc in Financial Engineering at WorldQuant University. My research is on market regimes: when Hidden Markov Models describe markets well, when they break, and whether knowing the regime improves forecasts and portfolios.</p>
+          <p>I write about it at <a href="https://analytical-investor.blog">The Analytical Investor</a>, where every post ships with tested code.</p>
+        </div>
+      </div>
+      <div class="now">
+        <div><small>Work</small><h3>XENO Investment Management</h3><p>VP, Investor Relations &amp; Data.</p></div>
+        <div><small>Study</small><h3>WorldQuant University</h3><p>MSc Financial Engineering.</p></div>
+        <div><small>Writing</small><h3>The Analytical Investor</h3><p>Investing from first principles, for everyday investors, analysts and quants.</p></div>
+      </div>
+    </div>
+  </section>
 
-	</body>
+  <section class="block" id="research" aria-labelledby="research-h">
+    <div class="wrap">
+      <h2 id="research-h">Research</h2>
+      <p class="lede">A path through regime modelling, from the algorithms up to portfolio construction.</p>
+      <ol class="roadmap">
+        <li data-s="pub"><span class="status">Publishing</span><h3>Hidden Markov Models from scratch</h3><p>The forward algorithm, Viterbi and Baum-Welch in log-space NumPy, validated against <code>hmmlearn</code>.</p></li>
+        <li data-s="pub"><span class="status">Publishing</span><h3>When HMMs fail</h3><p>Diagnosing walk-forward convergence failures on SPY and VIX data.</p></li>
+        <li data-s="wip"><span class="status">In progress</span><h3>Replicating regime-aware LightGBM</h3><p>A claims inventory, an assumptions register and documented deviations from the original paper.</p></li>
+        <li data-s="next"><span class="status">Next</span><h3>Robust portfolio construction</h3><p>Minimum-variance portfolios with Ledoit-Wolf shrinkage, stress-tested by Monte Carlo.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <h2 id="work-h">Selected work</h2>
+      <div class="work">
+        <article class="case">
+          <div>
+            <div class="kind">Open source · Python library</div>
+            <h3>analytical-investor-toolkit</h3>
+            <p>Tested Python implementations of every model on The Analytical Investor: portfolio optimisation, DCF valuation, beta estimation, VaR and Expected Shortfall, market-efficiency tests and cost-aware momentum backtests.</p>
+            <ul class="tags"><li>Python</li><li>NumPy</li><li>pandas</li><li>pytest</li><li>GitHub Actions</li></ul>
+            <div class="links"><a href="https://github.com/TimothyBAine/analytical-investor-toolkit">Code</a><a href="https://analytical-investor.blog">Blog</a></div>
+          </div>
+          <dl class="metrics">
+            <div><dt>10</dt><dd>Year 1 modules, each tied to a post</dd></div>
+            <div><dt>10</dt><dd>Article scripts with companion notebooks</dd></div>
+            <div><dt>CI</dt><dd>Regression tests run on every push</dd></div>
+          </dl>
+        </article>
+        <article class="case">
+          <div>
+            <div class="kind">Work project · private</div>
+            <h3>Customer analytics pipeline</h3>
+            <p>One command turns raw client-system exports into validated working tables, an interactive dashboard and a summary workbook. Repeat runs are cached, and every table is checked against the analyst's own figures.</p>
+            <ul class="tags"><li>Python</li><li>pandas</li><li>Parquet</li><li>HTML dashboard</li><li>Excel</li></ul>
+          </div>
+          <dl class="metrics">
+            <div><dt>1</dt><dd>Command from raw exports to dashboard</dd></div>
+            <div><dt>~15 s</dt><dd>Rebuild time after the first run</dd></div>
+            <div><dt>4</dt><dd>Pipeline stages: extract, build, aggregate, render</dd></div>
+          </dl>
+        </article>
+        <article class="case">
+          <div>
+            <div class="kind">Data analysis · Streamlit</div>
+            <h3>Conflict in Africa, 1996–2016</h3>
+            <p>An interactive analysis of two decades of conflict events across the continent, explorable by country, year and event type.</p>
+            <ul class="tags"><li>Python</li><li>pandas</li><li>Streamlit</li></ul>
+            <div class="links"><a href="https://github.com/TimothyBAine/AfricaConflictData">Code</a></div>
+          </div>
+          <dl class="metrics">
+            <div><dt>20 yrs</dt><dd>Of conflict events covered</dd></div>
+          </dl>
+        </article>
+        <article class="case">
+          <div>
+            <div class="kind">Visualisation · D3.js</div>
+            <h3>HIV/AIDS data in D3</h3>
+            <p>Interactive visualisations of HIV/AIDS data built by hand in D3.js.</p>
+            <ul class="tags"><li>JavaScript</li><li>D3.js</li></ul>
+            <div class="links"><a href="https://github.com/TimothyBAine/InfoViz-Project">Code</a></div>
+          </div>
+          <dl class="metrics">
+            <div><dt>D3</dt><dd>Hand-built, no chart library</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="github" aria-labelledby="gh-h">
+    <div class="wrap">
+      <h2 id="gh-h">Recently on GitHub</h2>
+      <p class="lede">Loaded live from the GitHub API each time you open this page.</p>
+      <div class="gh-stats" id="gh-stats" hidden></div>
+      <div class="repos" id="repos"></div>
+      <p class="gh-note" id="gh-note">Loading repositories…</p>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h">Let's talk markets, regimes or African capital markets.</h2>
+      <div class="cta">
+        <a class="btn primary" href="mailto:timothy.b.aine@gmail.com">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/timothybaine">LinkedIn</a>
+        <a class="btn" href="https://github.com/TimothyBAine">GitHub</a>
+        <a class="btn" href="https://analytical-investor.blog">Blog</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="yr">2026</span> Timothy Aine. The hero chart is a simulated price path shaded by its true regime, not market data.</div></footer>
+
+<nav class="dock" aria-label="Sections">
+  <a href="#top">Home</a><a href="#about">About</a><a href="#research">Research</a><a href="#work">Work</a><a href="#contact">Contact</a>
+</nav>
+
+<script>
+(function(){
+  // Theme toggle (remembered per browser; storage may be unavailable)
+  var root=document.documentElement, key="theme";
+  try{var saved=localStorage.getItem(key); if(saved) root.dataset.theme=saved;}catch(e){}
+  document.getElementById("theme").addEventListener("click",function(){
+    var dark = root.dataset.theme ? root.dataset.theme==="dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    try{localStorage.setItem(key,root.dataset.theme);}catch(e){}
+  });
+  document.getElementById("yr").textContent=new Date().getFullYear();
+
+  // Hero chart: a seeded two-state Markov-switching price path
+  var svg=document.getElementById("chart"), NS="http://www.w3.org/2000/svg";
+  var seed=20261123; function rnd(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;}
+  function gauss(){var u=rnd()||1e-9,v=rnd();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
+  var N=420, W=1000, H=600, p=[100], s=[0], st=0;
+  var mu=[0.0009,-0.0016], sd=[0.007,0.024], stay=[0.985,0.94];
+  for(var i=1;i<N;i++){ if(rnd()>stay[st]) st=1-st; s.push(st); p.push(p[i-1]*Math.exp(mu[st]+sd[st]*gauss())); }
+  var lo=Math.min.apply(null,p), hi=Math.max.apply(null,p);
+  function x(i){return i/(N-1)*W;} function y(v){return H*0.86-(v-lo)/(hi-lo)*H*0.62;}
+  svg.setAttribute("viewBox","0 0 "+W+" "+H);
+  var start=0;
+  for(i=1;i<=N;i++){
+    if(i===N||s[i]!==s[start]){
+      var r=document.createElementNS(NS,"rect");
+      r.setAttribute("x",x(start)); r.setAttribute("y",0);
+      r.setAttribute("width",Math.max(x(Math.min(i,N-1))-x(start),1)); r.setAttribute("height",H);
+      r.setAttribute("fill",s[start]?"var(--stress-band)":"var(--calm-band)");
+      r.setAttribute("class","band"); r.style.setProperty("--t",(start/(N-1)).toFixed(3));
+      svg.appendChild(r); start=i;
+    }
+  }
+  var d="M"+x(0)+","+y(p[0]); for(i=1;i<N;i++) d+="L"+x(i).toFixed(1)+","+y(p[i]).toFixed(1);
+  var path=document.createElementNS(NS,"path");
+  path.setAttribute("d",d); path.setAttribute("fill","none"); path.setAttribute("stroke","var(--price)");
+  path.setAttribute("stroke-width","1.6"); path.setAttribute("vector-effect","non-scaling-stroke");
+  path.setAttribute("stroke-opacity",".9"); path.setAttribute("class","price");
+  svg.appendChild(path);
+  path.style.setProperty("--len",Math.ceil(path.getTotalLength()));
+
+  // Dock: highlight the section in view
+  var links=[].slice.call(document.querySelectorAll(".dock a"));
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id);});}
+  });},{rootMargin:"-45% 0px -50% 0px"});
+  ["top","about","research","work","contact"].forEach(function(id){var el=document.getElementById(id); if(el) io.observe(el);});
+
+  // Live GitHub data
+  var user="TimothyBAine", hide={"timothybaine":1,"timothybaine.github.io":1};
+  var note=document.getElementById("gh-note");
+  function el(tag,cls,txt){var e=document.createElement(tag); if(cls)e.className=cls; if(txt!=null)e.textContent=txt; return e;}
+  Promise.all([
+    fetch("https://api.github.com/users/"+user).then(function(r){if(!r.ok)throw r;return r.json();}),
+    fetch("https://api.github.com/users/"+user+"/repos?per_page=100&sort=pushed").then(function(r){if(!r.ok)throw r;return r.json();})
+  ]).then(function(res){
+    var u=res[0], repos=res[1].filter(function(r){return !r.fork && !hide[r.name.toLowerCase()];});
+    document.getElementById("repo-count").textContent=u.public_repos;
+    var last=repos[0]?new Date(repos[0].pushed_at).toLocaleDateString("en-GB",{day:"numeric",month:"short"}):"—";
+    var langs={}; repos.forEach(function(r){if(r.language)langs[r.language]=(langs[r.language]||0)+1;});
+    var top=Object.keys(langs).sort(function(a,b){return langs[b]-langs[a];})[0]||"—";
+    var stats=document.getElementById("gh-stats");
+    [[u.public_repos,"Public repositories"],[last,"Last push"],[top,"Most-used language"]].forEach(function(s){
+      var d=el("div"); d.appendChild(el("b",null,s[0])); d.appendChild(el("span",null,s[1])); stats.appendChild(d);
+    });
+    stats.hidden=false;
+    var box=document.getElementById("repos");
+    repos.filter(function(r){return r.description;}).slice(0,6).forEach(function(r){
+      var a=el("a","repo"); a.href=r.html_url;
+      a.appendChild(el("strong",null,r.name));
+      a.appendChild(el("p",null,r.description||"No description yet."));
+      var when=new Date(r.pushed_at).toLocaleDateString("en-GB",{month:"short",year:"numeric"});
+      a.appendChild(el("small",null,(r.language?r.language+", ":"")+"updated "+when));
+      box.appendChild(a);
+    });
+    note.innerHTML='See everything on <a href="https://github.com/'+user+'">github.com/'+user+'</a>.';
+  }).catch(function(){
+    note.innerHTML='GitHub didn\'t respond. See the repositories on <a href="https://github.com/'+user+'">github.com/'+user+'</a>.';
+  });
+})();
+</script>
+</body>
 </html>
