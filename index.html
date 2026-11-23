@@ -7,7 +7,7 @@
 <meta name="description" content="Timothy Aine: data and investment professional in Kampala, Uganda. Market regimes, quantitative research and investment tooling.">
 <meta property="og:title" content="Timothy Aine">
 <meta property="og:description" content="Data and investment professional in Kampala, Uganda. Market regimes, quantitative research and investment tooling.">
-<meta property="og:image" content="https://timothybaine.github.io/images/profile.jpeg">
+<meta property="og:image" content="https://timothybaine.github.io/images/IMG_4951.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -77,7 +77,7 @@ p{margin:0 0 1em}
 .facts b{display:block;font-family:var(--display);font-size:clamp(26px,3vw,36px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
 .facts span{color:var(--muted);font-size:14px}
 .portrait{position:relative;justify-self:end;width:min(100%,380px)}
-.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;filter:grayscale(.15) contrast(1.02);border:1px solid var(--line)}
+.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:28px;border:1px solid var(--line)}
 .portrait figcaption{position:absolute;left:16px;bottom:16px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(6px);padding:6px 12px;border-radius:999px;font-size:13px;color:var(--muted)}
 .legend{position:absolute;right:24px;bottom:22px;z-index:2;display:flex;gap:16px;font-size:13px;color:var(--faint)}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
@@ -102,6 +102,20 @@ section.block{padding:110px 0;border-top:1px solid var(--line)}
 li[data-s="pub"] .status{color:var(--calm)} li[data-s="wip"] .status{color:var(--stress)}
 .roadmap h3{margin:2px 0 6px}
 .roadmap p{color:var(--muted);margin:0}
+
+/* Featured */
+.featured{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+.feature{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:36px;position:relative;overflow:hidden}
+.feature::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--accent)}
+.feature.calm{--accent:var(--calm)} .feature.stress{--accent:var(--stress)}
+.feature .kind{color:var(--accent);font-size:14px;font-weight:600;margin-bottom:10px}
+.feature h3{font-size:clamp(28px,3.2vw,40px);font-weight:800;letter-spacing:-.03em;margin-bottom:14px}
+.feature p{color:var(--muted)}
+.feature .q{color:var(--text);font-size:19px;line-height:1.5;margin-bottom:14px}
+.feature .metrics{grid-template-columns:repeat(3,1fr);gap:14px;margin:auto 0 0;padding-top:20px}
+.feature .metrics dt{font-size:28px}
+.feature .cta{margin:26px 0 0}
+.feature .btn.primary{background:var(--accent);border-color:var(--accent)}
 
 /* Work */
 .work{display:grid;gap:18px;margin-top:40px}
@@ -150,7 +164,7 @@ footer{padding:40px 0 120px;color:var(--faint);font-size:14px;border-top:1px sol
 }
 
 @media (max-width:900px){
-  .hero .wrap,.split,.case{grid-template-columns:1fr}
+  .hero .wrap,.split,.case,.featured{grid-template-columns:1fr}
   .hero .wrap{gap:40px}
   .portrait{justify-self:start;width:min(100%,300px)}
   .now,.repos{grid-template-columns:1fr}
@@ -162,14 +176,15 @@ footer{padding:40px 0 120px;color:var(--faint);font-size:14px;border-top:1px sol
   .wrap{padding:0 16px}
   .top nav .btn:not(.theme){display:none}
   .facts{grid-template-columns:1fr 1fr}
-  .case{padding:24px}
+  .case,.feature{padding:24px}
+  .feature .metrics{grid-template-columns:1fr 1fr}
   section.block{padding:80px 0}
   .dock a{padding:8px 10px;font-size:13px}
 }
 </style>
 </head>
 <body>
-<a class="skip" href="#about">Skip to content</a>
+<a class="skip" href="#featured">Skip to content</a>
 
 <header class="top">
   <div class="wrap">
@@ -191,8 +206,8 @@ footer{padding:40px 0 120px;color:var(--faint);font-size:14px;border-top:1px sol
         <p class="intro"><strong>Data &amp; investment professional in Kampala.</strong> I build tools where finance meets engineering, and I study how markets switch between calm and stressed regimes.</p>
         <div class="cta">
           <a class="btn primary" href="mailto:timothy.b.aine@gmail.com">Email me</a>
+          <a class="btn" href="#featured">See featured work</a>
           <a class="btn" href="https://analytical-investor.blog">Read the blog</a>
-          <a class="btn" href="https://www.linkedin.com/in/timothybaine">LinkedIn</a>
         </div>
         <ul class="facts">
           <li><b>VP</b><span>Investor Relations &amp; Data</span></li>
@@ -201,11 +216,52 @@ footer{padding:40px 0 120px;color:var(--faint);font-size:14px;border-top:1px sol
         </ul>
       </div>
       <figure class="portrait">
-        <img src="images/profile.jpeg" alt="Portrait of Timothy Aine" width="380" height="475">
+        <img src="images/IMG_4951.jpeg" alt="Portrait of Timothy Aine" width="912" height="1168">
         <figcaption>Kampala, Uganda</figcaption>
       </figure>
     </div>
     <div class="legend" aria-hidden="true"><span><i style="background:var(--calm)"></i>Calm regime</span><span><i style="background:var(--stress)"></i>Stressed regime</span><span>Simulated two-state path</span></div>
+  </section>
+
+  <section class="block" id="featured" aria-labelledby="featured-h">
+    <div class="wrap">
+      <h2 id="featured-h">Featured work</h2>
+      <p class="lede">Two open-source projects: a tested library behind my blog, and a study of how African stocks really move together.</p>
+      <div class="featured">
+        <article class="feature calm">
+          <div class="kind">Open-source Python library</div>
+          <h3>Analytical Investor Toolkit</h3>
+          <p class="q">Every model on The Analytical Investor, as tested code you can run.</p>
+          <p>Portfolio optimisation, DCF valuation, beta estimation, VaR and Expected Shortfall, market-efficiency tests and cost-aware momentum backtests. Each module is tied to a blog post and has a companion notebook.</p>
+          <ul class="tags"><li>Python</li><li>NumPy</li><li>pandas</li><li>pytest</li><li>GitHub Actions</li></ul>
+          <dl class="metrics">
+            <div><dt>10</dt><dd>Year 1 modules</dd></div>
+            <div><dt>10</dt><dd>Article scripts and notebooks</dd></div>
+            <div><dt>CI</dt><dd>Tests on every push</dd></div>
+          </dl>
+          <div class="cta">
+            <a class="btn primary" href="https://github.com/TimothyBAine/analytical-investor-toolkit">View the code</a>
+            <a class="btn" href="https://analytical-investor.blog">Read the blog</a>
+          </div>
+        </article>
+        <article class="feature stress">
+          <div class="kind">Research dashboard</div>
+          <h3>Clustering African Stocks</h3>
+          <p class="q">Do African stocks group by country or by business? Mostly by country.</p>
+          <p>Two years of daily prices for 852 stocks on Johannesburg, Cairo, Lagos, Nairobi and Accra, clustered by how they move together. Each cluster is then tested for stability, out-of-sample usefulness and what it adds to a portfolio.</p>
+          <ul class="tags"><li>Python</li><li>scikit-learn</li><li>SciPy</li><li>Hierarchical clustering</li><li>Bootstrap</li><li>Mansa API</li></ul>
+          <dl class="metrics">
+            <div><dt>852</dt><dd>Stocks on 5 exchanges</dd></div>
+            <div><dt>4 of 6</dt><dd>Clusters from a single exchange</dd></div>
+            <div><dt>50</dt><dd>Bootstrap resamples per check</dd></div>
+          </dl>
+          <div class="cta">
+            <a class="btn primary" href="https://timothybaine.github.io/clustering-african-stocks/">Open the dashboard</a>
+            <a class="btn" href="https://github.com/TimothyBAine/clustering-african-stocks">View the code</a>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
 
   <section class="block" id="about" aria-labelledby="about-h">
@@ -241,36 +297,8 @@ footer{padding:40px 0 120px;color:var(--faint);font-size:14px;border-top:1px sol
 
   <section class="block" id="work" aria-labelledby="work-h">
     <div class="wrap">
-      <h2 id="work-h">Selected work</h2>
+      <h2 id="work-h">More work</h2>
       <div class="work">
-        <article class="case">
-          <div>
-            <div class="kind">Open source · Research dashboard</div>
-            <h3>Clustering African stocks</h3>
-            <p>Do African stocks group by country or by business? Two years of daily prices for 852 stocks on Johannesburg, Cairo, Lagos, Nairobi and Accra, clustered by how they move together. Each cluster is then tested for stability, out-of-sample usefulness and what it adds to a portfolio. Short answer: mostly by country.</p>
-            <ul class="tags"><li>Python</li><li>scikit-learn</li><li>SciPy</li><li>Hierarchical clustering</li><li>Bootstrap</li><li>Mansa API</li></ul>
-            <div class="links"><a href="https://timothybaine.github.io/clustering-african-stocks/">Dashboard</a><a href="https://github.com/TimothyBAine/clustering-african-stocks">Code</a></div>
-          </div>
-          <dl class="metrics">
-            <div><dt>852</dt><dd>Stocks across 5 African exchanges</dd></div>
-            <div><dt>4 of 6</dt><dd>Clusters drawn from a single exchange</dd></div>
-            <div><dt>50</dt><dd>Bootstrap resamples per stability check</dd></div>
-          </dl>
-        </article>
-        <article class="case">
-          <div>
-            <div class="kind">Open source · Python library</div>
-            <h3>analytical-investor-toolkit</h3>
-            <p>Tested Python implementations of every model on The Analytical Investor: portfolio optimisation, DCF valuation, beta estimation, VaR and Expected Shortfall, market-efficiency tests and cost-aware momentum backtests.</p>
-            <ul class="tags"><li>Python</li><li>NumPy</li><li>pandas</li><li>pytest</li><li>GitHub Actions</li></ul>
-            <div class="links"><a href="https://github.com/TimothyBAine/analytical-investor-toolkit">Code</a><a href="https://analytical-investor.blog">Blog</a></div>
-          </div>
-          <dl class="metrics">
-            <div><dt>10</dt><dd>Year 1 modules, each tied to a post</dd></div>
-            <div><dt>10</dt><dd>Article scripts with companion notebooks</dd></div>
-            <div><dt>CI</dt><dd>Regression tests run on every push</dd></div>
-          </dl>
-        </article>
         <article class="case">
           <div>
             <div class="kind">Work project · private</div>
@@ -338,7 +366,7 @@ footer{padding:40px 0 120px;color:var(--faint);font-size:14px;border-top:1px sol
 <footer><div class="wrap">© <span id="yr">2026</span> Timothy Aine. The hero chart is a simulated price path shaded by its true regime, not market data.</div></footer>
 
 <nav class="dock" aria-label="Sections">
-  <a href="#top">Home</a><a href="#about">About</a><a href="#research">Research</a><a href="#work">Work</a><a href="#contact">Contact</a>
+  <a href="#featured">Featured</a><a href="#about">About</a><a href="#research">Research</a><a href="#work">Work</a><a href="#contact">Contact</a>
 </nav>
 
 <script>
@@ -387,7 +415,7 @@ footer{padding:40px 0 120px;color:var(--faint);font-size:14px;border-top:1px sol
   var io=new IntersectionObserver(function(es){es.forEach(function(e){
     if(e.isIntersecting){links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id);});}
   });},{rootMargin:"-45% 0px -50% 0px"});
-  ["top","about","research","work","contact"].forEach(function(id){var el=document.getElementById(id); if(el) io.observe(el);});
+  ["featured","about","research","work","contact"].forEach(function(id){var el=document.getElementById(id); if(el) io.observe(el);});
 
   // Live GitHub data
   var user="TimothyBAine", hide={"timothybaine":1,"timothybaine.github.io":1};
