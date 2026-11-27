@@ -247,11 +247,31 @@ footer{padding:40px 0 120px;color:var(--faint);font-size:14px;border-top:1px sol
         </div>
         <div class="car-ctrl">
           <button class="btn car-btn" type="button" id="car-prev" aria-controls="car-track" aria-label="Previous project">‹</button>
-          <span class="count" id="car-count" aria-live="polite">1 / 2</span>
+          <span class="count" id="car-count" aria-live="polite">1 / 3</span>
           <button class="btn car-btn" type="button" id="car-next" aria-controls="car-track" aria-label="Next project">›</button>
         </div>
       </div>
       <div class="car-track" id="car-track" role="region" aria-roledescription="carousel" aria-label="Featured projects" tabindex="0">
+        <article class="feature stress" role="group" aria-roledescription="slide">
+          <div>
+            <div class="kind">Research project · Dash dashboard</div>
+            <h3>Stock networks across market regimes</h3>
+            <p class="q">Do stock networks rewire in a crisis? Mostly the whole market moves together, and sector ties grow stronger underneath.</p>
+            <p>Daily returns for 66 US large caps since 2005. A hidden Markov model sorts days into calm, moderate and stressed regimes, and a graphical lasso estimates a partial-correlation network for each one, with and without the market factor. A Dash dashboard steps through the networks over time.</p>
+            <ul class="tags"><li>Python</li><li>hmmlearn</li><li>NetworkX</li><li>Graphical lasso</li><li>scikit-learn</li><li>Plotly Dash</li></ul>
+          </div>
+          <div class="side">
+            <dl class="metrics">
+              <div><dt>0.18 → 0.52</dt><dd>Average correlation, calm to stressed</dd></div>
+              <div><dt>~0.05</dt><dd>The same average with the market removed</dd></div>
+              <div><dt>66</dt><dd>US large caps, 2005 to 2026</dd></div>
+            </dl>
+            <div class="cta">
+              <a class="btn primary" href="https://github.com/TimothyBAine/markov-models-us-markets">View the code</a>
+              <a class="btn" href="https://github.com/TimothyBAine/markov-models-us-markets#readme">Read the findings</a>
+            </div>
+          </div>
+        </article>
         <article class="feature calm" role="group" aria-roledescription="slide">
           <div>
             <div class="kind">Open-source Python library</div>
@@ -322,6 +342,7 @@ footer{padding:40px 0 120px;color:var(--faint);font-size:14px;border-top:1px sol
       <ol class="roadmap">
         <li data-s="pub"><span class="status">Publishing</span><h3>Hidden Markov Models from scratch</h3><p>The forward algorithm, Viterbi and Baum-Welch in log-space NumPy, validated against <code>hmmlearn</code>.</p></li>
         <li data-s="pub"><span class="status">Publishing</span><h3>When HMMs fail</h3><p>Diagnosing walk-forward convergence failures on SPY and VIX data.</p></li>
+        <li data-s="pub"><span class="status">Code published</span><h3>How stock networks change across regimes</h3><p>A regime HMM paired with a partial-correlation network per regime for 66 US large caps. Stressed markets push average correlation from 0.18 to 0.52, almost all of it the market factor. With the market removed, sectors become more distinct and Real Estate moves toward Financials. <a href="https://github.com/TimothyBAine/markov-models-us-markets">Code and findings</a>.</p></li>
         <li data-s="wip"><span class="status">In progress</span><h3>Replicating regime-aware LightGBM</h3><p>A claims inventory, an assumptions register and documented deviations from the original paper.</p></li>
         <li data-s="next"><span class="status">Next</span><h3>Robust portfolio construction</h3><p>Minimum-variance portfolios with Ledoit-Wolf shrinkage, stress-tested by Monte Carlo.</p></li>
       </ol>
